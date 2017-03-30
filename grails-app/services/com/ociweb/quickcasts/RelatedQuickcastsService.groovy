@@ -15,10 +15,8 @@ class RelatedQuickcastsService implements GrailsConfigurationAware {
     }
 
     List<Quickcast> findAllRelatedQuickcasts(Quickcast quickcast) {
-        def criteria = Quickcast.createCriteria()
-        criteria.list {
-            ne('id', quickcast?.id)
-            maxResults(numberOfRelatedQuickcasts)
-        } as List<Quickcast>
+        def l = Quickcast.quickcastList().findAll { it.id != quickcast?.id }
+        Collections.shuffle(l)
+        l.subList(0, numberOfRelatedQuickcasts)
     }
 }

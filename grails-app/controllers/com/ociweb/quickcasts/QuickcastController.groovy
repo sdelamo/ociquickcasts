@@ -6,11 +6,11 @@ class QuickcastController {
     def relatedQuickcastsService
 
     def index() {
-        [quickcasts: Quickcast.findAll()]
+        [quickcasts: Quickcast.quickcastList()]
     }
 
-    def show() {
-        def quickcast = Quickcast.get(params.id)
+    def show(Long id) {
+        def quickcast = Quickcast.quickcastList().find { it.id ==  id}
         def relatedQuickcasts = relatedQuickcastsService.findAllRelatedQuickcasts(quickcast)
         [quickcast: quickcast, relatedQuickcasts: relatedQuickcasts]
     }
