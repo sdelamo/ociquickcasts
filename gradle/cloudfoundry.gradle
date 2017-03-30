@@ -1,0 +1,14 @@
+apply plugin: 'cloudfoundry'
+
+cloudfoundry {
+    target = "https://api.run.pivotal.io"
+    application = 'ociquickcasts-prod'
+    organization = "softamo.com"
+    space = "production"
+    file = file("build/libs/ociquickcasts-${version}.war")
+    memory = 1048
+    instances = 1
+    buildpack = "java_buildpack"
+    services {
+    }
+}
