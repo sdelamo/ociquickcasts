@@ -1,3 +1,11 @@
+sudo: false
+cache:
+  directories:
+  - "$HOME/.gradle"
+jdk:
+- oraclejdk8
+before_script:
+script: "./travis-build.sh"
 env:
   global:
   - secure: dAqxhUr8hdZDY4+r48/J14GWmtM0ataRz6wF/LCcxRPXpZM8+52WYvfNa/L0HXfTd7aGgL+IHxKJ/DdAABWwFQhGkrihyLENQbzXP4zvSuUucIqMvK8v3bLorwXzd9Yy3VixccsmeYL5j0HzVObopdGcl4o0KYiBq6ZSDlFkPQubiaH33cNUL7wnffP5veHOHLljITFl7JiWxdELvldeAlbn+UgRGmrym+Niw5w8TGmsxB8REUVQ9Rke26jWUL+sGBx42I2bYPNJs6uAv5UP5R7bShEBoONQgP7R0tP26G7PMQvK0E8jDVNODb/hf2IK4+QAx2NSl8UZ4g3UTS4l/xfvY8PMNOYo+x2zbqGMGo0CIERMOp6X/JkqAgjZQKYI368gUe+WMBLmrgcc+Sabj4JDSWGcbp+82NJJYpxFHGyMUT5d7lxs7X7peDqA+vlRMjAW9CzF/DZO83GUDbMvlDjFEi4PBRTCd75Fxg1LPhw6ufIKuaib5L12MTQwhS4GmhUup+PevxPSKROkyGUyGkhFIguK61iza3weXK7jfSj8WchxTNzLBZa5noXavqYcJY1OqUgtHC5X3cObfmDWUZuTmyTXIDsHHCgu4HS/sE9MrEBfnu0l8kfeL+SnGID2CVGan244fKwGZO+D0VCMpQz+YHH0dzSIysMbcpDXCbk=
